@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rahul | QA Engineer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(135deg, #0d1117, #161b22);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header span {
+      color: #58a6ff;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #9da7b3;
+    }
+
+    .btns a {
+      text-decoration: none;
+      color: #0d1117;
+      background: #58a6ff;
+      padding: 12px 25px;
+      margin: 0 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .btns a:hover {
+      background: #1f6feb;
+      color: #fff;
+    }
+
+    section {
+      padding: 80px 10%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.2rem;
+      color: #58a6ff;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      color: #c9d1d9;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #161b22;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: #010409;
+      text-align: center;
+      padding: 20px;
+      color: #8b949e;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 2.3rem;
+      }
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="fade">
+    <h1>Hi, I'm <span>Rahul</span></h1>
+    <p>QA Engineer | Manual & Automation Testing</p>
+    <div class="btns">
+      <a href="#contact">Contact</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </header>
+
+  <section class="about fade">
+    <h2>About Me</h2>
+    <p>
+      I am a passionate QA Engineer with experience in manual and automation testing.
+      I focus on delivering high-quality software by ensuring reliability, performance,
+      and user satisfaction.
+    </p>
+  </section>
+
+  <section class="fade">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="skill-card">Manual Testing</div>
+      <div class="skill-card">Automation Testing</div>
+      <div class="skill-card">Selenium</div>
+      <div class="skill-card">Java</div>
+      <div class="skill-card">API Testing</div>
+      <div class="skill-card">TestNG / Cucumber</div>
+    </div>
+  </section>
+
+  <section id="projects" class="fade">
+    <h2>Projects & Experience</h2>
+    <div class="projects">
+      <div class="project">
+        <h3>Automation Framework</h3>
+        <p>Designed and maintained Selenium automation framework for web applications.</p>
+      </div>
+      <div class="project">
+        <h3>API Testing</h3>
+        <p>Performed REST API testing using REST Assured and Postman.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="fade">
+    <h2>Contact</h2>
+    <p style="text-align:center;">Email: rahul@example.com</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Rahul | QA Engineer</p>
+  </footer>
+
+  <script>
+    const fades = document.querySelectorAll('.fade');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    fades.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
